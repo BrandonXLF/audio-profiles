@@ -11,7 +11,6 @@
 
 int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
-    app.setCompanyName("Brandon Fowler");
 
     qmlRegisterType<AudioDeviceModel>("AudioDeviceModel", 1, 0, "AudioDeviceModel");
     qmlRegisterType<ProfileModel>("ProfileModel", 1, 0, "ProfileModel");

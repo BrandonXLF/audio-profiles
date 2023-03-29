@@ -20,6 +20,7 @@ HEADERS += \
 
 RESOURCES += main.qrc
 RC_ICONS = images/icon.ico
+QMAKE_TARGET_COPYRIGHT = Brandon Fowler
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
