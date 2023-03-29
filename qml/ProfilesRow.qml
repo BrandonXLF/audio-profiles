@@ -9,10 +9,10 @@ Row {
 
     id: root
     spacing: 10
-    topPadding: 5
-    bottomPadding: 5
-    leftPadding: 10
-    rightPadding: 10
+    topPadding: 6
+    bottomPadding: 6
+    leftPadding: 16
+    rightPadding: 16
 
     Label {
         text: "Profiles:"

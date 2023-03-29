@@ -19,7 +19,7 @@ GridLayout {
             id: topGrid
             y: -verticalBar.position * (topGrid.Layout.minimumHeight + topGrid.anchors.margins)
             anchors.left: parent.left
-            anchors.margins: 10
+            anchors.margins: 16
             width: Math.min(Layout.maximumWidth, outer.width) - anchors.margins * 2
             columns: 4
 

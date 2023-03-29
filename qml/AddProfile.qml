@@ -6,7 +6,7 @@ Row {
     signal createProfile(name: string);
 
     id: root
-    spacing: 5
+    spacing: 6
 
     ImageButton {
         visible: !root.showDelete && !root.showForm
