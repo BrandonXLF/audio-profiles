@@ -27,7 +27,8 @@ public:
     };
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    QVariant data(const QModelIndex &index, int role = NameRole) const override;
+    bool setData(const QModelIndex &index, const QVariant &value, const int role) override;
     virtual QHash<int, QByteArray> roleNames() const override;
 
 public slots:

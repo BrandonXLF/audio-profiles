@@ -21,6 +21,22 @@ QVariant ProfileModel::data(const QModelIndex &index, int role) const {
     return QVariant();
 }
 
+bool ProfileModel::setData(const QModelIndex &index, const QVariant &value, const int role) {
+    if (!index.isValid())
+        return false;
+
+    switch (role) {
+        case NameRole:
+            profiles[index.row()].name = value.toString();
+            emit dataChanged(index, index);
+
+            save();
+            return true;
+    }
+
+    return false;
+}
+
 QHash<int, QByteArray> ProfileModel::roleNames() const {
     QHash<int, QByteArray> names;
 
@@ -35,7 +51,6 @@ void ProfileModel::newProfile(QString name) {
     Profile profile;
     profile.name = name;
     profile.defaults = mDevices->getDefaults();
-
     profiles.append(profile);
 
     endInsertRows();
@@ -49,9 +64,7 @@ void ProfileModel::loadProfile(int index) {
 
 void ProfileModel::deleteProfile(int index) {
     beginRemoveRows(QModelIndex(), index, index);
-
     profiles.remove(index);
-
     endRemoveRows();
 
     save();
@@ -59,7 +72,6 @@ void ProfileModel::deleteProfile(int index) {
 
 void ProfileModel::setSettings(QSettings* settings) {
     mSettings = settings;
-
     load();
 }
 

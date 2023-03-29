@@ -21,46 +21,17 @@ Row {
 
     Repeater {
         id: repeater
+
         model: ProfileModel {
             devices: audioDevices
             settings: appSettings
         }
 
-        delegate: Row {
-            spacing: 5
-
-            BorderlessButton {
-                text: name
-                anchors.verticalCenter: parent.verticalCenter
-                onPressed: repeater.model.loadProfile(index)
-            }
-
-            ImageButton {
-                visible: root.showDelete
-                anchors.verticalCenter: parent.verticalCenter
-                image: "trash"
-                onPressed: {
-                    root.showDelete = false;
-                    repeater.model.deleteProfile(index);
-                }
-            }
-        }
+        ProfileName { }
     }
 
-    Row {
-        spacing: 5
-
-        AddProfile {
-            visible: !root.showDelete
-            onFormToggled: visible => root.showForm = visible;
-            onCreateProfile: name => repeater.model.newProfile(name);
-        }
-
-        ImageButton {
-            visible: !root.showForm && repeater.count > 0
-            anchors.verticalCenter: parent.verticalCenter
-            image: root.showDelete ? "cancel" : "trash"
-            onPressed: root.showDelete = !root.showDelete
-        }
+    AddProfile {
+        onFormToggled: visible => root.showForm = visible;
+        onCreateProfile: name => repeater.model.newProfile(name);
     }
 }

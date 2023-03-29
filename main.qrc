@@ -34,7 +34,6 @@
         <file>qml/DeviceMainButton.qml</file>
         <file>qml/DeviceList.qml</file>
         <file>qml/DiscreteScrollBar.qml</file>
-        <file>images/dark/trash.svg</file>
-        <file>images/light/trash.svg</file>
+        <file>qml/ProfileName.qml</file>
     </qresource>
 </RCC>
