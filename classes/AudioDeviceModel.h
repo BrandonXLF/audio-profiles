@@ -30,8 +30,6 @@ public:
     bool setData(const QModelIndex &index, const QVariant &value, const int role) override;
     virtual QHash<int, QByteArray> roleNames() const override;
 
-    void setType(EDataFlow type);
-
 private:
     AudioDevices* mDevices = nullptr;
     EDataFlow mFlow;
