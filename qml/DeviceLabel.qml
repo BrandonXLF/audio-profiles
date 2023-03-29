@@ -8,6 +8,7 @@ Rectangle {
     Layout.maximumWidth: child.width + 70
     Layout.preferredWidth: Layout.maximumWidth
     Layout.fillWidth: true
+    color: "transparent"
 
     BorderlessButton {
         id: child

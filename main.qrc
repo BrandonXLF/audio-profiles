@@ -1,11 +1,25 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/phone-green.svg</file>
-        <file>images/phone.svg</file>
-        <file>images/trash.svg</file>
-        <file>images/plus.svg</file>
-        <file>images/cancel.svg</file>
-        <file>images/save.svg</file>
+        <file>images/dark/cancel.svg</file>
+        <file>images/dark/check-green.svg</file>
+        <file>images/dark/check.svg</file>
+        <file>images/dark/phone-green.svg</file>
+        <file>images/dark/phone.svg</file>
+        <file>images/dark/plus.svg</file>
+        <file>images/dark/save.svg</file>
+        <file>images/dark/volume-high.svg</file>
+        <file>images/dark/volume-low.svg</file>
+        <file>images/dark/volume-mute.svg</file>
+        <file>images/light/cancel.svg</file>
+        <file>images/light/check-green.svg</file>
+        <file>images/light/check.svg</file>
+        <file>images/light/phone-green.svg</file>
+        <file>images/light/phone.svg</file>
+        <file>images/light/plus.svg</file>
+        <file>images/light/save.svg</file>
+        <file>images/light/volume-high.svg</file>
+        <file>images/light/volume-low.svg</file>
+        <file>images/light/volume-mute.svg</file>
         <file>qml/AddProfile.qml</file>
         <file>qml/BorderlessButton.qml</file>
         <file>qml/ImageButton.qml</file>
@@ -13,16 +27,14 @@
         <file>qml/MainArea.qml</file>
         <file>qml/TopArea.qml</file>
         <file>qml/ProfilesRow.qml</file>
-        <file>images/volume-high.svg</file>
-        <file>images/volume-low.svg</file>
-        <file>images/volume-mute.svg</file>
-        <file>images/check-green.svg</file>
-        <file>images/check.svg</file>
         <file>qml/ListTitle.qml</file>
         <file>qml/DeviceLabel.qml</file>
         <file>qml/DeviceVolumePopup.qml</file>
         <file>qml/DeviceCommButton.qml</file>
         <file>qml/DeviceMainButton.qml</file>
         <file>qml/DeviceList.qml</file>
+        <file>qml/DiscreteScrollBar.qml</file>
+        <file>images/dark/trash.svg</file>
+        <file>images/light/trash.svg</file>
     </qresource>
 </RCC>

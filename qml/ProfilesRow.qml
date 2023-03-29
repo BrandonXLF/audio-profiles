@@ -1,16 +1,20 @@
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls
 import ProfileModel
 
-RowLayout {
-    property bool showDelete: false;
-    property bool showForm: false;
+Row {
+    property bool showDelete: false
+    property bool showForm: false
 
     id: root
     spacing: 10
-    Layout.fillHeight: false
+    topPadding: 5
+    bottomPadding: 5
+    leftPadding: 10
+    rightPadding: 10
 
-    Text {
+    Label {
         text: "Profiles:"
         Layout.alignment: Qt.AlignVCenter
     }
@@ -23,7 +27,6 @@ RowLayout {
         }
 
         delegate: Row {
-            height: parent.height
             spacing: 5
 
             BorderlessButton {
@@ -35,20 +38,13 @@ RowLayout {
             ImageButton {
                 visible: root.showDelete
                 anchors.verticalCenter: parent.verticalCenter
-                image: "qrc:/images/trash.svg"
+                image: "trash"
                 onPressed: {
                     root.showDelete = false;
                     repeater.model.deleteProfile(index);
                 }
             }
         }
-    }
-
-    Rectangle {
-        visible: repeater.count > 0
-        width: 1
-        color: "#444"
-        Layout.fillHeight: true
     }
 
     Row {
@@ -63,7 +59,7 @@ RowLayout {
         ImageButton {
             visible: !root.showForm && repeater.count > 0
             anchors.verticalCenter: parent.verticalCenter
-            image: "qrc:/images/" + (root.showDelete ? "cancel.svg" : "trash.svg")
+            image: root.showDelete ? "cancel" : "trash"
             onPressed: root.showDelete = !root.showDelete
         }
     }

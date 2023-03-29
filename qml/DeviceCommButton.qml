@@ -3,6 +3,6 @@ import QtQuick.Layouts
 
 ImageButton {
     Layout.alignment: Qt.AlignVCenter
-    image: "qrc:/images/" + (defaultComm ? "phone-green.svg" : "phone.svg")
+    image: defaultComm ? "phone-green" : "phone"
     onPressed: defaultComm = true
 }

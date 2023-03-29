@@ -11,7 +11,7 @@ Row {
     ImageButton {
         visible: !root.showDelete && !root.showForm
         anchors.verticalCenter: parent.verticalCenter
-        image: "qrc:/images/plus.svg"
+        image: "plus"
         onPressed: {
             root.showForm = true;
             root.formToggled(root.showForm);
@@ -22,12 +22,14 @@ Row {
     TextInput {
         id: profileName
         visible: root.showForm
+        color: palette.windowText
+        font.pointSize: mainWindow.font.pointSize
         text: "Profile"
         anchors.verticalCenter: parent.verticalCenter
     }
 
     ImageButton {
-        image: "qrc:/images/save.svg"
+        image: "save"
         visible: root.showForm
         anchors.verticalCenter: parent.verticalCenter
         onPressed: {
@@ -38,7 +40,7 @@ Row {
     }
 
     ImageButton {
-        image: "qrc:/images/cancel.svg"
+        image: "cancel"
         visible: root.showForm
         anchors.verticalCenter: parent.verticalCenter
         onPressed: {

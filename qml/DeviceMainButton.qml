@@ -3,6 +3,6 @@ import QtQuick.Layouts
 
 ImageButton {
     Layout.alignment: Qt.AlignVCenter
-    image: "qrc:/images/" + (defaultMain ? "check-green.svg" : "check.svg")
+    image: defaultMain ? "check-green" : "check"
     onPressed: defaultMain = true
 }

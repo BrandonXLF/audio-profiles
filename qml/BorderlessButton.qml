@@ -7,11 +7,11 @@ Label {
     id: root
 
     background: Rectangle {
-        color: nameMouseArea.containsMouse ? "#d7eff7" : "transparent"
+        color: mouseArea.containsMouse ? Universal.chromeDisabledHighColor : "transparent"
     }
 
     MouseArea {
-        id: nameMouseArea
+        id: mouseArea
         anchors.fill: parent
         hoverEnabled : true
         onPressed: root.pressed()

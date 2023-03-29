@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls
 
 Rectangle {
     property string image
@@ -8,13 +9,13 @@ Rectangle {
     id: root
     width: 20
     height: 20
-    color: mouseArea.containsMouse ? "#d7eff7" : "transparent"
+    color: mouseArea.containsMouse ? Universal.chromeDisabledHighColor : "transparent"
 
     Image {
         width: 20
         height: 20
         anchors.centerIn: parent
-        source: image
+        source: "qrc:/images/" + (Universal.theme == Universal.Dark ? 'dark' : 'light') + "/" + image + ".svg"
     }
 
     MouseArea {

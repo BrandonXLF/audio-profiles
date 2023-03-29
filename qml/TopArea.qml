@@ -5,13 +5,11 @@ import QtQuick.Controls
 ColumnLayout {
     spacing: 0
 
-    ColumnLayout {
-        id: rowParent
-        Layout.minimumWidth: 0
-        Layout.topMargin: 5
-        Layout.bottomMargin: 5
-        Layout.leftMargin: 10
-        Layout.rightMargin: 10
+    Rectangle {
+        id: outer
+        Layout.fillWidth: true
+        color: Universal.chromeMediumLowColor
+        height: row.height
 
         ProfilesRow {
             id: row
@@ -19,18 +17,11 @@ ColumnLayout {
         }
     }
 
-    ScrollBar {
+    DiscreteScrollBar {
         id: topBar
-        hoverEnabled: true
-        active: hovered || pressed
         orientation: Qt.Horizontal
-        size: row.parent.width / row.width
+        size: outer.width / row.width
         Layout.fillWidth: true
-    }
-
-    Rectangle {
-        height: 1
-        color: '#444'
-        Layout.fillWidth: true
+        bgColor: Universal.chromeMediumLowColor
     }
 }

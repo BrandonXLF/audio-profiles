@@ -12,6 +12,7 @@ GridLayout {
         id: outer
         Layout.fillWidth: true
         Layout.fillHeight: true
+        color: "transparent"
         clip: true
 
         GridLayout {
@@ -49,10 +50,8 @@ GridLayout {
         }
     }
 
-    ScrollBar {
+    DiscreteScrollBar {
         id: verticalBar
-        hoverEnabled: true
-        active: hovered || pressed
         orientation: Qt.Vertical
         size: outer.height / (topGrid.Layout.minimumHeight + topGrid.anchors.margins)
         Layout.fillHeight: true
@@ -60,10 +59,8 @@ GridLayout {
         Layout.column: 1
     }
 
-    ScrollBar {
+    DiscreteScrollBar {
         id: horizontalBar
-        hoverEnabled: true
-        active: hovered || pressed
         orientation: Qt.Horizontal
         size: topGrid.width / (topGrid.Layout.maximumWidth - 70)
         Layout.fillWidth: true

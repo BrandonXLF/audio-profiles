@@ -1,7 +1,8 @@
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls
 
-Text {
+Label {
     property string titleText;
 
     text: titleText

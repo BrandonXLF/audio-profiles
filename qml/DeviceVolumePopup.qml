@@ -9,7 +9,7 @@ Item {
     ImageButton {
         id: popupOpener
         Layout.alignment: Qt.AlignVCenter
-        image: "qrc:/images/" + ((!volume || mute) ? "volume-mute.svg" : (volume <= 0.5 ? "volume-low.svg" : "volume-high.svg"))
+        image: (!volume || mute) ? "volume-mute" : (volume <= 0.5 ? "volume-low" : "volume-high")
         onPressed: popup.open();
     }
 
@@ -22,9 +22,11 @@ Item {
         width: popupOpener.width + padding * 2
         focus: true
         padding: 5
+        Universal.theme: Universal.System
         background: Rectangle {
-            color: "white"
-            border.color: '#888'
+            color: Universal.chromeMediumLowColor
+            border.color: Universal.chromeHighColor
+            border.width: 1
             radius: 2
         }
         onOpened: hasPopup = true
@@ -40,38 +42,14 @@ Item {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 orientation: Qt.Vertical
-
-                background: Rectangle {
-                    x: (parent.availableWidth - width) / 2
-                    color: '#bbb'
-                    height: parent.availableHeight
-                    width: 4
-                    radius: 1
-
-                    Rectangle {
-                        width: parent.width
-                        height: (1 - parent.parent.visualPosition) * parent.height
-                        y: parent.parent.visualPosition * parent.height
-                        color: 'green'
-                        radius: 2
-                    }
-                }
-
-                handle: Rectangle {
-                    color: 'green'
-                    implicitHeight: 6
-                    implicitWidth: parent.availableWidth * 0.7
-                    radius: 2
-                    x: (parent.availableWidth - width) / 2
-                    y: parent.visualPosition * (parent.availableHeight - height)
-                }
-
+                handle.width: 15
+                Universal.accent: Universal.theme == Universal.Dark ? 'lightgreen' : 'green'
                 onMoved: volume = value
             }
 
             ImageButton {
                 Layout.alignment: Qt.AlignVCenter
-                image: "qrc:/images/" + ((!volume || mute) ? "volume-mute.svg" : (volume <= 0.5 ? "volume-low.svg" : "volume-high.svg"))
+                image: (!volume || mute) ? "volume-mute" : (volume <= 0.5 ? "volume-low" : "volume-high")
                 onPressed: mute = !mute
             }
         }
