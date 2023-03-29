@@ -1,4 +1,5 @@
-QT += quick axcontainer
+QT += quick
+LIBS += -lole32
 
 SOURCES += \
     classes/AudioDevice.cpp \
@@ -7,9 +8,18 @@ SOURCES += \
     classes/AudioDeviceModel.cpp \
     classes/AudioDevices.cpp \
     classes/ProfileModel.cpp
+    
 
-RESOURCES += \
-    main.qrc
+HEADERS += \
+    classes/DataFlowModel.h \
+    classes/AudioDevice.h \
+    headers/PolicyConfig.h \
+    classes/AudioDevices.h \
+    classes/AudioDeviceModel.h \
+    classes/ProfileModel.h
+
+RESOURCES += main.qrc
+RC_ICONS = images/icon.ico
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -21,13 +31,3 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-HEADERS += \
-    classes/DataFlowModel.h \
-    classes/AudioDevice.h \
-    headers/PolicyConfig.h \
-    classes/AudioDevices.h \
-    classes/AudioDeviceModel.h \
-    classes/ProfileModel.h
-
-RC_ICONS = images/icon.ico
