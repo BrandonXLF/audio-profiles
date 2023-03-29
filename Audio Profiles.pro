@@ -29,3 +29,5 @@ HEADERS += \
     classes/AudioDevices.h \
     classes/AudioDeviceModel.h \
     classes/ProfileModel.h
+
+RC_ICONS = images/icon.ico
