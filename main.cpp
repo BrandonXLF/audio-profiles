@@ -10,9 +10,8 @@
 #include "classes/ProfileModel.h"
 
 int main(int argc, char *argv[]) {
-    qputenv("QT_QPA_PLATFORM", "windows:darkmode=2");
-
     QGuiApplication app(argc, argv);
+    app.setCompanyName("Brandon Fowler");
 
     qmlRegisterType<AudioDeviceModel>("AudioDeviceModel", 1, 0, "AudioDeviceModel");
     qmlRegisterType<ProfileModel>("ProfileModel", 1, 0, "ProfileModel");
