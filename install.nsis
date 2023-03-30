@@ -70,7 +70,7 @@ Section "Create Desktop Shortcut" S3
 SectionEnd
 
 Section "Uninstall"
-	RMDir /r /REBOOTOK $INSTDIR
+	RMDir /r $INSTDIR
 	Delete "$SMPROGRAMS\${APP_NAME}.lnk"
 	Delete "$SMSTARTUP\${APP_NAME}.lnk"
 	Delete "$DESKTOP\${APP_NAME}.lnk"
