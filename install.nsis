@@ -75,6 +75,7 @@ Section "Uninstall"
 	Delete "$SMSTARTUP\${APP_NAME}.lnk"
 	Delete "$DESKTOP\${APP_NAME}.lnk"
 	DeleteRegKey SHCTX "${REG_KEY}"
+	DeleteRegKey HKCU "Software\Brandon Fowler\Audio Profiles"
 SectionEnd
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
