@@ -21,6 +21,7 @@ AudioDevice::AudioDevice(AudioDevices* parent, EDataFlow flow, IMMDevice* winDev
     winDevice->GetId(&deviceID);
 
     this->deviceID = QString::fromWCharArray(deviceID);
+    CoTaskMemFree(deviceID);
 
     winDevice->Activate(
         __uuidof(IAudioEndpointVolume),
@@ -35,6 +36,7 @@ AudioDevice::AudioDevice(AudioDevices* parent, EDataFlow flow, IMMDevice* winDev
 }
 
 AudioDevice::~AudioDevice() {
+    this->endpointVolume->UnregisterControlChangeNotify(this);
     this->endpointVolume->Release();
 }
 

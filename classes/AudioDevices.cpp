@@ -46,6 +46,8 @@ void AudioDevices::populateDevices() {
 
             winDevice->Release();
         }
+
+        deviceCollection->Release();
     }
 }
 
@@ -162,6 +164,7 @@ HRESULT AudioDevices::OnDeviceStateChanged(LPCWSTR deviceID, DWORD state) {
         }
     }
 
+    endpoint->Release();
     winDevice->Release();
 
     return S_OK;
@@ -198,6 +201,7 @@ HRESULT AudioDevices::OnPropertyValueChanged(LPCWSTR deviceID, const PROPERTYKEY
     devices[flow][index]->name = QString::fromWCharArray(friendlyName.pwszVal);
 
     propStore->Release();
+    endpoint->Release();
     winDevice->Release();
 
     emit deviceUpdated(flow, index);
