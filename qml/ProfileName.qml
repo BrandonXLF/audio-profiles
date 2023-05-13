@@ -36,6 +36,13 @@ Row {
                     height: implicitContentHeight + topPadding + bottomPadding
                     onTriggered: showRename = true
                 }
+
+                MenuItem {
+                    text: "Overwrite"
+                    padding: 6
+                    height: implicitContentHeight + topPadding + bottomPadding
+                    onTriggered: repeater.model.updateProfile(index)
+                }
             }
         }
     }

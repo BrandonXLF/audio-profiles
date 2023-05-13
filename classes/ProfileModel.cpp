@@ -58,6 +58,11 @@ void ProfileModel::newProfile(QString name) {
     save();
 }
 
+void ProfileModel::updateProfile(int index) {
+    profiles[index].defaults = mDevices->getDefaults();
+    save();
+}
+
 void ProfileModel::loadProfile(int index) {
     mDevices->setDefaults(profiles[index].defaults);
 }

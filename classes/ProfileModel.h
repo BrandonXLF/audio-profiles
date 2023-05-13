@@ -33,6 +33,7 @@ public:
 
 public slots:
     void newProfile(QString name);
+    void updateProfile(int index);
     void loadProfile(int index);
     void deleteProfile(int index);
 
